@@ -76,12 +76,11 @@ var dvdWrap = function(e){
 dvdButt.addEventListener("click", dvdWrap);
 
 var clearFxn = function(e){
-    
+    clearInterval(growId);
+    clearInterval(dvdId);    
     while(pic.childNodes[0] != null){
 	pic.removeChild(pic.childNodes[0]);
     }
-    clearInterval(growId);
-    clearInterval(dvdId);
 }
 
 clearButt.addEventListener("click", clearFxn);
