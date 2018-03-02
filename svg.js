@@ -4,10 +4,10 @@ var clearButt = document.getElementById("clear");
 var circleButt = document.getElementById("circle");
 var dvdButt = document.getElementById("dvd");
 var circleR = 0;
-var rectX = 150;
-var rectY = 200;
-var vX = 2;
-var vY = 1;
+var rectX = Math.floor(Math.random() * 100 + 100);
+var rectY = Math.floor(Math.random() * 100 + 150);
+var vX = Math.floor(Math.random() * 5 + 1);
+var vY = Math.floor(Math.random() * 5 + 1);
 
 var growId;
 var dvdId;
@@ -37,9 +37,10 @@ var growCircle = function(e){
 }
 
 var growWrap = function(e){
+    clearInterval(growId);
     clearInterval(dvdId);
-    rectX = 150;
-    rectY = 200;
+    rectX = Math.floor(Math.random() * 100 + 100);
+    rectY = Math.floor(Math.random() * 100 + 150);
     growId = setInterval(growCircle, 25);
 }
 
@@ -69,6 +70,7 @@ var dvd = function(e){
 
 var dvdWrap = function(e){
     clearInterval(growId);
+    clearInterval(dvdId);
     circleR = 0;
     dvdId = setInterval(dvd, 25);
 }
